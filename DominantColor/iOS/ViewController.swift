@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let CGImage = image.cgImage
             for n in nValues {
                 let ns = dispatch_benchmark(5) {
-                    dominantColorsInImage(CGImage!, maxSampledPixels: n)
+                    _ = dominantColorsInImage(CGImage!, maxSampledPixels: n)
                     return
                 }
                 print("n = \(n) averaged \(ns/1000000) ms")
